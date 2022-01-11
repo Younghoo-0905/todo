@@ -8,7 +8,7 @@
 <style>
 	body{
 		background-image:url('${pageContext.request.contextPath}/image/bye.jpg');
-		background-size: 1550px 900px;
+		background-size: cover;
 	}
 	.position {
 		position:absolute;

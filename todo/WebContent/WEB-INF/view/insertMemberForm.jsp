@@ -9,7 +9,7 @@
 <style>
 	body{
 		background-image:url('${pageContext.request.contextPath}/image/hello.png');
-		background-size: 1500px 950px;
+		background-size: cover;
 	}
 	.position {
 		position:absolute;

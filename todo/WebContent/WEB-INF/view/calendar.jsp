@@ -11,19 +11,19 @@
 <style>
 	.spring{
 		background-image:url('${pageContext.request.contextPath}/image/background-spring.png');
-		background-size: 1600px 1300px;
+		background-size: cover;
 	}
 	.summer{
 		background-image:url('${pageContext.request.contextPath}/image/background-summer.jpg');
-		background-size: 1600px 1300px;
+		background-size: cover;
 	}
 	.autumn{
 		background-image:url('${pageContext.request.contextPath}/image/background-autumn.jpg');
-		background-size: 1600px 1300px;
+		background-size: cover;
 	}
 	.winter{
 		background-image:url('${pageContext.request.contextPath}/image/background-winter.jpg');
-		background-size: 1600px 1300px;
+		background-size: cover;
 	}
 	.section-calendar{
 		background-color:rgba(255,255,255,0.75);

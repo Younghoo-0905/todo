@@ -9,7 +9,7 @@
 <style>
 	body{
 		background-image:url('${pageContext.request.contextPath}/image/calendar.jpg');
-		background-size: 1500px 800px;
+		background-size: cover;
 	}
 	.position {
 		position:absolute;
