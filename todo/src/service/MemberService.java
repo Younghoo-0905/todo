@@ -12,6 +12,7 @@ public class MemberService {
 	private MemberDao memberDao;
 	private TodoDao todoDao;
 	
+	//	로그인
 	public Member login(Member member) {
 		Member loginMember = null;
 		Connection conn = null;
@@ -31,9 +32,27 @@ public class MemberService {
 		return loginMember;
 	}
 	
+	//	회원가입
+	public void insertMember(Member member) {
+		Connection conn = DBUtil.getConnection("jdbc:mariadb://13.125.182.110/todo", "root", "java1004");
+		try {
+			memberDao = new MemberDao();
+			memberDao.insertMember(conn, member);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}		
+	}
+	
+	//	회원탈퇴
 	public boolean removeMember(String memberId, String memberPw) {
 		boolean result = false;
-		Connection conn = DBUtil.getConnection("jdbc:mariadb://127.0.01:3306/todo", "root", "java1004");
+		Connection conn = DBUtil.getConnection("jdbc:mariadb://13.125.182.110/todo", "root", "java1004");
 		try {
 			conn.setAutoCommit(false);
 			

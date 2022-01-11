@@ -35,10 +35,28 @@ public class CalendarController extends HttpServlet {
 		//	System.out.println("[디버깅]" + memberId);
 		Map<String, Object> map = calendarService.getTargetCalendar(memberId, currentYear, currentMonth, option);
 			
+			//	계절 정보
+		//	계절 정보를 담을 변수
+		String season = "";
+		if(map.get("targetMonth").equals(4) || map.get("targetMonth").equals(5)) {
+			//	4, 5월 -> 봄
+			season = "spring";
+		} else if(map.get("targetMonth").equals(6) || map.get("targetMonth").equals(7) || map.get("targetMonth").equals(8) || map.get("targetMonth").equals(9)) {
+			//	6, 7, 8, 9월 -> 여름
+			season = "summer";
+		} else if(map.get("targetMonth").equals(10) || map.get("targetMonth").equals(11)) {
+			//	10, 11월 -> 가을
+			season = "autumn";
+		} else {
+			//	12, 1, 2, 3월 -> 겨울
+			season = "winter";
+		}
+		
 		//	모델 값
 		request.setAttribute("targetYear", map.get("targetYear"));
 		request.setAttribute("targetMonth", map.get("targetMonth"));
 		request.setAttribute("endDay", map.get("endDay"));
+		request.setAttribute("season", season);
 		
 		//	공백 개수
 		request.setAttribute("startBlank", map.get("startBlank"));

@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import vo.Member;
 
 public class MemberDao {
+	
+	//	로그인
 	public Member login(Connection conn, Member member) throws SQLException {
 		Member loginMember = null;
 		String sql = MemberQuery.LOGIN;
@@ -25,6 +27,17 @@ public class MemberDao {
 		return loginMember;
 	}
 	
+	//	회원가입
+	public void insertMember(Connection conn, Member member) throws SQLException {
+		String sql = MemberQuery.INSERT_MEMBER;
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, member.getMemberId());
+		stmt.setString(2, member.getMemberPw());
+		stmt.executeQuery();
+		stmt.close();
+	}	
+	
+	//	회원탈퇴
 	public int deleteMember(Connection conn, String memberId, String memberPw) throws SQLException  {
 		String sql = MemberQuery.DELETE_MEMBER;
 		PreparedStatement stmt = conn.prepareStatement(sql);

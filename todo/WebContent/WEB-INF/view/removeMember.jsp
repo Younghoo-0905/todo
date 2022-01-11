@@ -6,21 +6,35 @@
 <title>removeMember</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
+	body{
+		background-image:url('${pageContext.request.contextPath}/image/bye.jpg');
+		background-size: 1550px 900px;
+	}
 	.position {
 		position:absolute;
 		height:300px;
-		width:400px;
-		margin:-150px 0px 0px -200px;
+		width:450px;
+		margin:-150px 0px 0px -225px;
 		top:50%;
 		left:50%;
+	}
+	.section-calendar{
+		background-color:rgba(255,255,255,0.7);
+		padding: 50px;
+	}
+	.table{
+		border-color: grey;		
+	}
+	.color-border td{
+		border-color: grey;
 	}
 </style>
 </head>
 <body>
-	<div class="position">	
+	<div class="position section-calendar">	
 	<h1>회원 탈퇴</h1>		
 		<form class="text-center" method="post" action="${pageContext.request.contextPath}/member/removeMember">
-			<table class="table table-bordered">
+			<table class="table table-bordered color-border">
 				<tr>
 					<td>아이디 : </td>
 					<td><input type="hidden" name="memberId" value="${loginMember.memberId}">${loginMember.memberId}</td>

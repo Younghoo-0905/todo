@@ -5,6 +5,7 @@ public class Todo {
 	private String memberId;
 	private String todoDate;
 	private String todoContent;
+	private String todoComplete;
 	private String createDate;
 	private String updateDate;
 	private String fontColor;
@@ -33,6 +34,12 @@ public class Todo {
 	public void setTodoContent(String todoContent) {
 		this.todoContent = todoContent;
 	}
+	public String getTodoComplete() {
+		return todoComplete;
+	}
+	public void setTodoComplete(String todoComplete) {
+		this.todoComplete = todoComplete;
+	}
 	public String getCreateDate() {
 		return createDate;
 	}
@@ -55,8 +62,7 @@ public class Todo {
 	@Override
 	public String toString() {
 		return "Todo [todoNo=" + todoNo + ", memberId=" + memberId + ", todoDate=" + todoDate + ", todoContent="
-				+ todoContent + ", createDate=" + createDate + ", updateDate=" + updateDate + ", fontColor=" + fontColor
-				+ "]";
-	}
-	
+				+ todoContent + ", todoComplete=" + todoComplete + ", createDate=" + createDate + ", updateDate="
+				+ updateDate + ", fontColor=" + fontColor + "]";
+	}	
 }
